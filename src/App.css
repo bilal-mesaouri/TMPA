@@ -1,38 +1,114 @@
+@import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-calendars/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-dropdowns/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-inputs/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-navigations/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-popups/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-react-grids/styles/material.css";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.display_container {
+  margin: auto;
+  width: 99%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ppr {
+  width: 97%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tabcell {
+  background-color: blueviolet;
+}
+/* .row:hover{
+  background-color: rgb(160, 238, 212);
+} */
+
+.tabcell:focus::after,
+th:focus::after {
+  content: "";
+  background-color: lightblue;
+  position: absolute;
+  left: 0;
+  height: 10000px;
+  top: -5000px;
+  width: 100%;
+  z-index: -1;
+}
+
+.tabcell:focus::before {
+  background-color: lightblue;
+  content: "";
+  height: 100%;
+  top: 0;
+  left: -5000px;
+  position: absolute;
+  width: 10000px;
+  z-index: -1;
+}
+
+.btn {
+  margin: 10px;
+}
+
+.home,
+#root {
+  height: 100%;
+}
+
+.navbar {
+  background-color: #259ad7;
   display: flex;
-  flex-direction: column;
+  height: 8%;
+  min-height: 40px;
+  margin-bottom: 20px;
+}
+.rights {
+/*   background-color: brown;
+ */  width: 30%;
+  padding: 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.lefts {
+/*    background-color: greenyellow;
+ */   width: 20%;
+  padding:10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-left: 40px;
 }
+.center {
+/*   background-color: rgb(243, 109, 243);
+ */  width: 40%;
+  padding:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  .rights button {
+  margin-right: 10%;
+}
+.App-logo{
+  width: 230px;
+}
+img {
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    border-radius: 3%;
+  
 }
