@@ -1,15 +1,18 @@
 import "./App.css";
-import { BrowserRouter as Router,useNavigate, Routes, Route, Link } from "react-router-dom";
-import { Redirect } from 'react-router';
-import Add_car from "./components/Add_car";
-import Display3 from "./components/Display3";
-import Navbar from "./components/Navbar";
+import { BrowserRouter as Router,Navigate, Routes, Route, Link } from "react-router-dom";
+import Main from "./components/Main"
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
+import Protectedrts from "./components/auth/Protectedrts";
+import Protect_login from "./components/auth/Protect_login";
+import Landing from "./components/Landing";
 import { useState } from "react";
 import { createTheme ,  ThemeProvider} from '@mui/material/styles';
+import { useEffect } from "react";
 
 function App() {
   const theme = createTheme({
-
+    
     components: {
       MuiButton: { 
         styleOverrides: { 
@@ -35,16 +38,31 @@ function App() {
   adding_flag==0?setadding_flag(1):setadding_flag(0)
 
  }
+
+ 
   return (
+    <>
+
+    
+    
       <ThemeProvider theme={theme}>
+    <Router>
 
-    <div className="home">
-      <Navbar/>
-      {adding_flag?<Display3/>:<Add_car/>}
-      
-
-    </div>
+      <Routes>
+      <Route path="/" element={ <Navigate to="/Accueil" />} />
+      <Route element={<Protect_login/>}>
+        <Route path="/login" element={<Login/>}/>
+        </Route>
+        <Route path="/Accueil" element={<Landing/>}/>
+        <Route element={<Protectedrts/>}>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/home" element={<Main/>}/>
+        </Route>
+      </Routes>
+    </Router>
     </ThemeProvider>
+
+    </>
   );
 }
 
